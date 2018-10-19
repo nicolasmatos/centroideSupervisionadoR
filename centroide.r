@@ -101,13 +101,13 @@ processaCentroide <- function(classe1, classe2, classe3) {
     qntAcertosDois = 0
     qntAcertosTres = 0
     
+    #Calculando os centroides
+    centroides = centroide(dataTreino)
+    
     #Laço para percorrer todas as linha do dataframe de teste
     for (i in 1: (nrow(dataTeste))) {
       #Recebe a linha atual do conjunto de teste
       linha = dataTeste[i,]
-
-      #Calculando os centroides
-      centroides = centroide(dataTreino)
       
       #Chamando a função que classifica a linha atual
       resultCentroide = verificarCentroide(centroides, linha)
@@ -213,13 +213,13 @@ processaCentroide2 <- function(classe1, classe2, classe3) {
       #Variável para controlar os acertos do algoritmo
       qntAcertosTotal = 0
       
+      #Calculando os centroides
+      centroides = centroide(dataTreino)
+      
       #Laço para percorrer todas as linha do dataframe de teste
       for (i in 1: (nrow(dataTeste))) {
         #Recebe a linha atual do conjunto de teste
         linha = dataTeste[i,]
-        
-        #Calculando os centroides
-        centroides = centroide(dataTreino)
         
         #Chamando a função que classifica a linha atual
         resultCentroide = verificarCentroide(centroides, linha)
